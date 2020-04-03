@@ -1,2 +1,6 @@
 # PHPStorm
 /.idea
+# mon fichier de configuration
+config.php
+# mes futures bibilothèques externes
+/vendor

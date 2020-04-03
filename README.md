@@ -9,9 +9,33 @@ Je vais utiliser PHPStorm
 
 Je modifie le README.md et je le renvoie:
 
+    # ajout du README.md
     git add README.md
     
+    # Sauvegarde de notre travail
+    git commit -m"update README.md"
+    
+    # On envoie le commit sur github, le -u permet de ne plus
+    # envoyer notre master avec 'git push' à l'avenir
     git push -u origin master
 
 ### création .gitignore
 Pour éviter d'envoyer des fichiers dangereux ou inutiles sur le serveur (dans mon cas le dossier .idea/ généré par PHPStorm)
+
+- .gitignore
+
+
+    # PHPStorm
+    /.idea
+### prévision minimale des fichiers à ajouter au .gitignore
+- .gitignore
+
+
+    # PHPStorm
+    /.idea    
+    # mon fichier de configuration
+    config.php
+    # mes futures bibilothèques externes
+    /vendor
+
+Le future dossier datas devrait aussi être mis dans le .gitignore, mais ça ne vous permettrait pas de consulter mon cheminement    

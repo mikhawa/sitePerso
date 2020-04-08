@@ -1,0 +1,6 @@
+# Partie privées datas
+Dans ce dossier on trouvera les fichiers ressources utiles à la création du site, plans etc...
+
+(PSD, AI, WMB, SQL etc...)
+
+On ne les met normalement pas sur github, mais comme dans ce cas vous devez voir ces fichiers...

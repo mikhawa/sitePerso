@@ -60,6 +60,8 @@ Affichage de l'évolution de la création des tables en .png, 1 commit par table
 ![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/06-creation-table-rubrique.png " 06")
 #### Création relation Many to Many entre "thepage" et "rubrique"
 ![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/07-Relation-Many2Many-thepage-rubrique.png " 07")
-#### Création table "rubrique"
+#### Création table "commentaire"
 ![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/08-creation-table-commentaire.png " 08")
+#### Création relation Many to Many entre "commentaire" et "utilisateur"
+![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/09-Relation-Many2Many-commentaire-utilisateur.png " 09")
 

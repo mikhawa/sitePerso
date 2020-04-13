@@ -31,11 +31,11 @@ Pour éviter d'envoyer des fichiers dangereux ou inutiles sur le serveur (dans m
 - .gitignore
 
 
-    # PHPStorm
+    \# PHPStorm
     /.idea    
-    # mon fichier de configuration
+    \# mon fichier de configuration
     config.php
-    # mes futures bibilothèques externes
+    \# mes futures bibilothèques externes
     /vendor
 
 Le future dossier datas devrait aussi être mis dans le .gitignore, mais ça ne vous permettrait pas de consulter mon cheminement    

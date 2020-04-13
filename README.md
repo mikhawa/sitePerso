@@ -55,4 +55,6 @@ Affichage de l'évolution de la création des tables en .png, 1 commit par table
 #### Création table "thepage"
 ![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/04-creation-table-thepage.png " 04")
 #### Création relation One to Many entre "utilisateur" et "thepage"
-![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/05-Relation-One2Many-utilisateur-thepage.png " 03")
+![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/05-Relation-One2Many-utilisateur-thepage.png " 05")
+#### Création table "rubrique"
+![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/06-creation-table-rubrique.png " 06")

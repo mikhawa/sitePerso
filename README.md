@@ -22,23 +22,21 @@ Je modifie le README.md et je le renvoie:
 ### création .gitignore
 Pour éviter d'envoyer des fichiers dangereux ou inutiles sur le serveur (dans mon cas le dossier .idea/ généré par PHPStorm)
 
-- .gitignore
+.gitignore
 
 
     # PHPStorm
     /.idea
 ### prévision minimale des fichiers à ajouter au .gitignore
-- .gitignore
+.gitignore
 
-
-    \# PHPStorm
-    
-    /.idea    
-    \# mon fichier de configuration
-    
+    # PHPStorm
+    /.idea 
+       
+    # mon fichier de configuration  
     config.php
-    \# mes futures bibilothèques externes
     
+    # mes futures bibilothèques externes   
     /vendor
 
 Le future dossier datas devrait aussi être mis dans le .gitignore, mais ça ne vous permettrait pas de consulter mon cheminement    
@@ -46,11 +44,13 @@ Le future dossier datas devrait aussi être mis dans le .gitignore, mais ça ne 
 ### Création de la DB en Workbench
 dans le dossier datas
 
-Affichage de l'évolution de la création des tables en .png 1 commit par table
+Affichage de l'évolution de la création des tables en .png, 1 commit par table
 
-#### Création table utilisateur
+#### Création table "utilisateur"
 ![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/01-creation-table-utilisateur.png " 01")
-#### Création table droit
+#### Création table "droit"
 ![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/02-creation-table-droit.png " 02")
-#### Création relation Many to One entre droit et utilisateur
-![alt text](03-Relation-Many2One-utilisateur-droit.png " 03")
+#### Création relation Many to One entre "droit" et "utilisateur"
+![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/03-Relation-Many2One-utilisateur-droit.png " 03")
+#### Création table "thepage"
+![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/04-creation-table-thepage.png " 04")

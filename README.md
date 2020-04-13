@@ -64,4 +64,6 @@ Affichage de l'évolution de la création des tables en .png, 1 commit par table
 ![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/08-creation-table-commentaire.png " 08")
 #### Création relation Many to Many entre "commentaire" et "utilisateur"
 ![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/09-Relation-Many2Many-commentaire-utilisateur.png " 09")
+#### Création relation Many to Many entre "commentaire" et "thepage"
+![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/10-Relation-Many2Many-commentaire-thepage.png " 09")
 

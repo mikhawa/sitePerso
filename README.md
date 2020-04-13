@@ -65,5 +65,11 @@ Affichage de l'évolution de la création des tables en .png, 1 commit par table
 #### Création relation Many to Many entre "commentaire" et "utilisateur"
 ![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/09-Relation-Many2Many-commentaire-utilisateur.png " 09")
 #### Création relation Many to Many entre "commentaire" et "thepage"
-![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/10-Relation-Many2Many-commentaire-thepage.png " 09")
+![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/10-Relation-Many2Many-commentaire-thepage.png " 10")
+#### Modification de "rubrique" 
+0 : racine du site
+                                
+autre numérique: id du parent de la rubrique
+
+![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/11-Modification-de-rubrique-pour-plusieurs-niveau-de-menu.png " 10")
 

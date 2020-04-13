@@ -71,5 +71,5 @@ Affichage de l'évolution de la création des tables en .png, 1 commit par table
                                 
 autre numérique: id du parent de la rubrique
 
-![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/11-Modification-de-rubrique-pour-plusieurs-niveau-de-menu.png " 10")
+![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/11-Modification-de-rubrique-pour-plusieurs-niveau-de-menu.png " 11")
 

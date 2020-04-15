@@ -97,3 +97,13 @@ MVC est un design pattern (patron de conception) qui permet de diviser en 3 gran
 
 ### Création du dossier model
 Dans ce dossier on trouvera les fichiers qui gèrent les données, les mappings des tables de la DB, leurs manageurs etc...
+
+### Création du dossier view
+Dans ce dossier on trouvera les templates nécessaires à l'affichage des vues de notre site.
+
+J'utiliserai le moteur de template Twig, créé à la base pour Symfony, mais pouvant être utilisé indépendament du framework.
+
+https://twig.symfony.com/
+
+Sa gestion du cache et son mode d'héritage est parfait pour un affichage optimal des vues.
+

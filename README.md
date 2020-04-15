@@ -95,6 +95,10 @@ MVC est un design pattern (patron de conception) qui permet de diviser en 3 gran
 2. Une vue (View) contient la présentation de l'interface graphique.
 3. Un contrôleur (Controller) contient la logique concernant les actions effectuées par l'utilisateur.
 
+Utilisation (simplifiée)
+
+![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/mvc.png " mvc")
+
 ### Création du dossier model
 Dans ce dossier on trouvera les fichiers qui gèrent les données, les mappings des tables de la DB, leurs manageurs etc...
 

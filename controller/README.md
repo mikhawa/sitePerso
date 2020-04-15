@@ -1,0 +1,2 @@
+# Partie controller du site
+Dans ce dossier on trouvera les fichiers qui gèrent les routes et font le lien (en dehors du contrôleur frontal se trouvant dans public/index.php) entre les model et les view

@@ -73,3 +73,8 @@ autre numérique: id du parent de la rubrique
 
 ![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/11-Modification-de-rubrique-pour-plusieurs-niveau-de-menu.png " 11")
 
+#### Création de la table "fichier"
+Qui contiendra n'importe quel type de fichiers uploadés sur le site, que ce soit des images, des pdf, etc....
+
+![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/12-creation-table-fichier.png " 12")
+

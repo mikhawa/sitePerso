@@ -87,5 +87,13 @@ Qui contiendra n'importe quel type de fichiers uploadés sur le site, que ce soi
 
 ### Importation de la DB v1
 
-Importez datas/export-michadbpitz-structure-v1.sql via PHPMyAdmin en désactivant les clefs étrangères (Foreign Keys)
+Importez datas/export-michadbpitz-structure-v1.sql via PHPMyAdmin en désactivant les clefs étrangères (Foreign Keys) 
 
+## Structure MVC
+MVC est un design pattern (patron de conception) qui permet de diviser en 3 grands groupes (3 modules aux responsablilités différentes) notre code de l'application web:
+1. Un modèle (Model) contient les données à afficher.
+2. Une vue (View) contient la présentation de l'interface graphique.
+3. Un contrôleur (Controller) contient la logique concernant les actions effectuées par l'utilisateur.
+
+### Création du dossier model
+Dans ce dossier on trouvera les fichiers qui gèrent les données, les mappings des tables de la DB, leurs manageurs etc...

@@ -78,3 +78,11 @@ Qui contiendra n'importe quel type de fichiers uploadés sur le site, que ce soi
 
 ![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/12-creation-table-fichier.png " 12")
 
+#### 3 relations Many to many entre fichier et les tables 
+- commentaire
+- utilisateur
+- thepage
+
+![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/13-Relation-m2m-fichier-thepage-fichier-commentaire-fichier-utilisateur.png " 13")
+
+

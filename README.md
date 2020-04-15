@@ -85,4 +85,7 @@ Qui contiendra n'importe quel type de fichiers uploadés sur le site, que ce soi
 
 ![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/13-Relation-m2m-fichier-thepage-fichier-commentaire-fichier-utilisateur.png " 13")
 
+### Importation de la DB v1
+
+Importez datas/export-michadbpitz-structure-v1.sql via PHPMyAdmin en désactivant les clefs étrangères (Foreign Keys)
 

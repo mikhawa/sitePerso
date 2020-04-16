@@ -114,3 +114,12 @@ Sa gestion du cache et son mode d'héritage est parfait pour un affichage optima
 ### Création du dossier controller
 Dans ce dossier on trouvera les fichiers qui gèrent les routes et font le lien (en dehors du contrôleur frontal se trouvant dans public/index.php) entre les model et les view
 
+### Création du fichier config.php
+Nous le metterons à la racine du site, bien qu'un dossier pourrait être créé si nous avions beaucoup de fichiers de configuration
+
+Avant de le créer nous allons vérifier qu'il est dans .gitignore pour éviter son envoi sur github.
+
+Je crée une copie de config.php avec le nom
+
+    config.php.exemple
+Je pourrai y laisser la configuration en local, quand je modifierai config.php avec les "vrais" paramètres, ils ne seront donc jamais sur github !! Sécurité avant tout !    

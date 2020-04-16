@@ -220,4 +220,9 @@ On devrait avoir une erreur ici, vu que le nom de la DB est fausse dans config.p
 
     Message d'erreur : SQLSTATE[HY000] [1049] Base 'michaeldbpitz' inconnue
     Code d'erreur : 1049
-           
+On va donc corriger la valeur dans config.php et config.php.exemple !
+
+    define("DB_NAME","michadbpitz");
+Nous devrions avoir une page vide: tout va bien !
+
+               

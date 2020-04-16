@@ -122,4 +122,13 @@ Avant de le créer nous allons vérifier qu'il est dans .gitignore pour éviter 
 Je crée une copie de config.php avec le nom
 
     config.php.exemple
-Je pourrai y laisser la configuration en local, quand je modifierai config.php avec les "vrais" paramètres, ils ne seront donc jamais sur github !! Sécurité avant tout !    
+Je pourrai y laisser la configuration en local, quand je modifierai config.php avec les "vrais" paramètres, ils ne seront donc jamais sur github !! Sécurité avant tout !  
+
+#### Renommez config.php.exemple en config.php pour que ça fonctionne en local chez vous !  
+
+### Création du contrôleur frontal
+dans public sous le nom de index.php
+
+    public/index.php
+
+    

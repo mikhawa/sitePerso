@@ -190,3 +190,34 @@ Nous allons ajouter ce chargeur dans le contrôleur frontal:
     spl_autoload_register(function ($class) {
         require '../model/' . $class . '.php';
     });
+    
+### Connexion à la DB grâce à MyPDO
+On utilise un try catch pour gérer les erreurs et on appelle grâce à notre autoload la class MyPDO se trouvant dans model/MyPDO.php
+
+    public/index.php
+    ...
+    // essai de connexion try
+    try {
+        /* $db_connect contient la connexion, on passe la 
+        constante MODE pour afficher ou non les erreurs SQL
+         suivant qu'on soit en dev ou en prod */
+        $db_connect = new MyPDO('mysql:host=' . DB_HOST . ';dbname=' 
+        . DB_NAME . ';port=' . DB_PORT . ';charset=' . DB_CHARSET,
+            DB_LOGIN,
+            DB_PWD,
+            null,
+            MODE);
+    // si il y a une erreur on la capture dans $e
+    } catch (PDOException $e) {
+        // on affiche nos problèmes de connexion
+        echo 'Message d\'erreur : ' . $e->getMessage();
+        echo '<br>';
+        echo 'Code d\'erreur : ' . $e->getCode();
+        // on arrête le script
+        die();
+    } 
+On devrait avoir une erreur ici, vu que le nom de la DB est fausse dans config.php
+
+    Message d'erreur : SQLSTATE[HY000] [1049] Base 'michaeldbpitz' inconnue
+    Code d'erreur : 1049
+           

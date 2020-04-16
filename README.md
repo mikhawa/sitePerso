@@ -138,4 +138,11 @@ Pour le moment, nous n'avons que config.php
     ...
     // fichier de configuration
     require_once "../config.php";  
-      
+### Création du virtualhost
+On le fera pointer vers le dossier public de notre projet:
+
+![alt text](https://raw.githubusercontent.com/mikhawa/sitePerso/master/datas/screenshot-localhost_8080-2020.04.16-13_06_17.png " virtualhost")     
+
+ce qui donne (chez moi) : http://siteperso:8080/ vers le dossier public, et donc vers le contrôleur frontal
+
+

@@ -171,3 +171,22 @@ Nous allons créé notre premier modèle, MyPDO, qui est une classe enfant de la
         }
     }
 Ce fichier n'est pas encore appelé par notre contrôleur frontal    
+
+### Création de l'autoload
+Cet autoload "maison", va chercher une classe inconnue appelée dans notre code dans le dossier model/..nomdeclasse.php
+
+Nous allons ajouter ce chargeur dans le contrôleur frontal:
+
+    public/index.php
+    ...
+    /*
+     * autoload pour nos modèles, si un nom de classe
+      n'existe pas, il va chercher automatiquement le nom de
+      la classe transformée en fichier .php (nom de la
+      classe == nom du fichier !), cela permet de charger
+      les fichiers que lorsque c'est nécessaire
+     */
+     
+    spl_autoload_register(function ($class) {
+        require '../model/' . $class . '.php';
+    });

@@ -146,3 +146,28 @@ On le fera pointer vers le dossier public de notre projet:
 ce qui donne (chez moi) : http://siteperso:8080/ vers le dossier public, et donc vers le contrôleur frontal
 
 
+### Création de notre premier modèle
+
+Nous allons créé notre premier modèle, MyPDO, qui est une classe enfant de la classe native PDO
+
+    model/MyPDO.php
+    ...
+    class MyPDO extends PDO
+    {
+    
+        // constructeur de MyPDO (appelé lors d'un new MyPDO())
+        public function __construct($dsn, $username = null, $passwd = null, $options = null, $product = null)
+        {
+            // on copie le constructeur de PDO (le parent)
+            parent::__construct($dsn, $username, $passwd, $options);
+    
+            // et on si la constante MODE passée à $product venant de config.php vaut "dev" 
+            // (mode développement) -> Surcharge du constructeur
+            if ($product === "dev") {
+                // affichage des erreurs SQL uniquement en développement
+                $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+            }
+        }
+    }
+Ce fichier n'est pas encore appelé par notre contrôleur frontal    

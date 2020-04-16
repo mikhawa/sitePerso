@@ -131,4 +131,11 @@ dans public sous le nom de index.php
 
     public/index.php
 
-    
+#### Appel des dépendances
+Pour le moment, nous n'avons que config.php
+
+    public/index.php
+    ...
+    // fichier de configuration
+    require_once "../config.php";  
+      

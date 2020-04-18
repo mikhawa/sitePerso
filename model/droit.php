@@ -47,7 +47,10 @@ class droit
     // void exprime qu'il n'y a pas de retour (procédure)
     public function setIddroit(int $iddroit): void
     {
-        $this->iddroit = $iddroit;
+        // si int vaut 0 (après échec de conversion) OU est négatif
+        // (ne colle pas avec unsigned), la variable vaut NULL, sinon
+        // elle vaut le paramètre passé
+        $this->iddroit = (empty($iddroit)||$iddroit<0)? NULL : $iddroit;
     }
 
     // on récupère le nom, il doit être un string

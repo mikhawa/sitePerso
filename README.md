@@ -228,7 +228,9 @@ Nous devrions avoir une page vide: tout va bien !
 ### Mapping des tables
 Nous allons transformer chaque table de la base de données (sauf les tables créées pour les many to many) en class dans notre dossier model
 
-Je vais décomposer le premier mapping: droit
+Je vais décomposer le premier mapping (transformation de nos tables en objets): droit
+
+#### droit.php
 
     model/droit.php
     ...
@@ -333,3 +335,15 @@ Exemple : $iddroit donne getIddroit() et setIddroit()
           {
               $this->droitdesc = $droitdesc;
           }      
+##### Modification de setIddroit()
+Pour qu'il colle avec les besoins de notre table, j'utilise une condition ternaire.
+
+    model/droit.php
+    ...
+    public function setIddroit(int $iddroit): void
+        {
+            // si int vaut 0 (après échec de conversion) OU est négatif
+            // (ne colle pas avec unsigned), la variable vaut NULL, sinon
+            // elle vaut le paramètre passé
+            $this->iddroit = (empty($iddroit)||$iddroit<0)? NULL : $iddroit;
+        }          

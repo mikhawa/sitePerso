@@ -286,7 +286,7 @@ Création du constructeur qui sera appelée lors de son instanciation ($a = new 
     
         }
 
-Création des getters et setters, ce sont les méthodes permettant de manipuler, modifier et supprimer nos attributs. Elles sont publique on peut les utiliser hors de la classe. Cette première version n'est pas encore "parfaitement"' optimisée pour notre table. Vous remarquerez qu'ils portent le même nom que les attributs avec get ou set devant le nom mis en majuscule.
+Création des getters et setters (mutators), ce sont les méthodes permettant de manipuler, modifier et supprimer nos attributs. Elles sont publiques on peut les utiliser hors de la classe. Cette première version n'est pas encore "parfaitement"' optimisée pour notre table. Vous remarquerez qu'ils portent le même nom que les attributs avec get ou set devant le nom mis en majuscule.
 
 Exemple : $iddroit donne getIddroit() et setIddroit() 
 
@@ -335,6 +335,7 @@ Exemple : $iddroit donne getIddroit() et setIddroit()
           {
               $this->droitdesc = $droitdesc;
           }      
+#### Les modifications de sécurités se font dans les setters !         
 ##### Modification de setIddroit()
 Pour qu'il colle avec les besoins de notre table, j'utilise une condition ternaire.
 
@@ -346,4 +347,18 @@ Pour qu'il colle avec les besoins de notre table, j'utilise une condition ternai
             // (ne colle pas avec unsigned), la variable vaut NULL, sinon
             // elle vaut le paramètre passé
             $this->iddroit = (empty($iddroit)||$iddroit<0)? NULL : $iddroit;
-        }          
+        }         
+##### Modification de setDroitname()
+On accepte les chaînes de caractères de moins de 60 caractères encodées en entités html sans espaces avant/après et sans tags
+
+    public function setDroitname(string $droitname): void
+        {
+            // on va éviter les attaques en préparant
+            // l'insertion probable dans une base de donnée
+            $this->droitname = htmlspecialchars(strip_tags(trim($droitname)),ENT_QUOTES);
+            // si le nom du droit converti à plus de 60
+            // caractères (voir ce champs dans la table),
+            // on refuse de changer la valeur
+            $this->droitname = (strlen($this->droitname)>60)? NULL : $this->droitname;
+        }
+! on pourrait désencoder les entités html dans le getDroitname(), mais c'est généralement pas nécessaire.          

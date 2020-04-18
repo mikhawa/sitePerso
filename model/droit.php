@@ -63,7 +63,10 @@ class droit
     // void exprime qu'il n'y a pas de retour (procédure)
     public function setDroitname(string $droitname): void
     {
-        $this->droitname = $droitname;
+        // on va éviter les attaques en préparant l'insertion probable dans une base de donnée
+        $this->droitname = htmlspecialchars(strip_tags(trim($droitname)),ENT_QUOTES);
+        // si le nom du droit converti à plus de 60 caractères (voir ce champs dans la table), on refuse de changer la valeur
+        $this->droitname = (strlen($this->droitname)>60)? NULL : $this->droitname;
     }
 
     // on récupère la description, elle doit être un string

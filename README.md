@@ -413,4 +413,32 @@ Pour utiliser l'hydratation et créer notre objet
          // passé en paramètre
          $this->hydrate($donnees);
      }  
-        
+
+#### Test de notre objet droit.php
+Nous allons le tester dans le Contrôleur frontal, nous le retirerons juste après
+
+    public/index.php
+    ...
+    $a = new droit([]);
+    echo "<p>Avec un tableau vide</p>";
+    echo "<pre>".var_dump($a)."</pre>";
+    $b = new droit(['iddroit'=>5,
+        'droitname'=>" <strong>lulu</strong>",
+        'droitdesc'=>"du blabla"]);
+    echo "<p>Avec un tableau avec des clefs et données valides</p>";
+    echo "<pre>".var_dump($b)."</pre>";
+    $c = new droit(['iddroit'=>3,
+        'droitname'=>" <strong>lala</strong>",
+        'droitdesc'=>"du blabla 2",
+        'test'=>"n'importe quoi"]);
+    echo "<p>Avec un tableau avec des clefs et données valides + 
+    des clefs non attendues (ne seront pas traîtées)</p>";
+    echo "<pre>".var_dump($c)."</pre>";
+    echo "<p>Avec un tableau avec des clefs et données non valides + 
+    des clefs non attendues (ne seront pas traîtées)</p>";
+    $d = new droit(['iddroit'=>-7,
+        'droitname'=>"",
+        'droitdesc'=>[25],
+        'test'=>"n'importe quoi"]);
+    echo "<pre>".var_dump($d)."</pre>";
+Les entrées sont ainsi protégées au niveau de l'instance de l'objet, avant même qu'une requête ne soit effectuée.            

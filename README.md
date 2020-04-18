@@ -230,7 +230,7 @@ Nous allons transformer chaque table de la base de données (sauf les tables cr�
 
 Je vais décomposer le premier mapping (transformation de nos tables en objets): droit
 
-#### droit.php
+### droit.php
 
     model/droit.php
     ...
@@ -373,5 +373,30 @@ identique que le précendent sauf que le champs peut être NULL, si ça dépasse
             $this->droitdesc = htmlspecialchars(strip_tags(trim($droitdesc)),ENT_QUOTES);
     
         }
-        
+#### L'hydratation
+Hydrater un objet revient à assigner des valeurs à ses attributs en utilisant les setters
+
+On va créer une méthode (fonction) hydrate() qui, une fois mise dans le constructeur, nous servira à gérer les données de manière automatique et sécurisées.       
+
+Pour en savoir plus je vous conseil fortement la lecture de cette partie du tuto (excellent pour l'OO en PHP): https://openclassrooms.com/fr/courses/1665806-programmez-en-oriente-objet-en-php/1666289-manipulation-de-donnees-stockees
+
+    model/droit.php
+    ....
+    // Méthode privée d'hydratation (procédure)
+        private function hydrate(array $data): void
+        {
+            foreach ($data as $key => $value)
+            {
+                // On récupère le nom du setter correspondant à l'attribut.
+                $method = 'set'.ucfirst($key);
+    
+                // Si le setter correspondant existe.
+                if (method_exists($this, $method))
+                {
+                    // On attribue la valeur gâce au setter.
+                    $this->$method($value);
+                }
+            }
+        }
+Cette méthode s'attend à recevoir un tableau associatif        
         

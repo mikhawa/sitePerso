@@ -32,6 +32,23 @@ class droit
 
     }
 
+    // Méthode privée d'hydratation
+    private function hydrate(array $data): void
+    {
+        foreach ($data as $key => $value)
+        {
+            // On récupère le nom du setter correspondant à l'attribut.
+            $method = 'set'.ucfirst($key);
+
+            // Si le setter correspondant existe.
+            if (method_exists($this, $method))
+            {
+                // On attribue la valeur gâce au setter.
+                $this->$method($value);
+            }
+        }
+    }
+
     /* Les getters (récupère une valeur) et les setters (change une valeur)
     permettent de changer/récupérer les attributs avec un contôle sur les données
     on peut les mettre en publique car nos attributs sont privés
@@ -79,12 +96,12 @@ class droit
     // on introduit la description, elle d oit être un string
     // void exprime qu'il n'y a pas de retour (procédure)
     public function setDroitdesc(string $droitdesc): void
-    {
-        // ce champs peut être null, on va juste protégér contre les tags, espaces et entités html
-        // si il dépasse les 300 caractères, on aura donc une erreur SQL en innodb, je ne le traîte pas
-        // comme setDroitname(), c'est un choix dans le gestion des erreurs
-        $this->droitdesc = htmlspecialchars(strip_tags(trim($droitdesc)),ENT_QUOTES);
+{
+    // ce champs peut être null, on va juste protégér contre les tags, espaces et entités html
+    // si il dépasse les 300 caractères, on aura donc une erreur SQL en innodb, je ne le traîte pas
+    // comme setDroitname(), c'est un choix dans le gestion des erreurs
+    $this->droitdesc = htmlspecialchars(strip_tags(trim($droitdesc)),ENT_QUOTES);
 
-    }
+}
 
 }

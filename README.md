@@ -398,5 +398,19 @@ Pour en savoir plus je vous conseil fortement la lecture de cette partie du tuto
                 }
             }
         }
-Cette méthode s'attend à recevoir un tableau associatif        
+Cette méthode s'attend à recevoir un tableau associatif   
+#### Adaptation du constructeur
+Pour utiliser l'hydratation et créer notre objet
+
+    model/droit.php
+    ...
+    // Les constructeurs sont toujours public et appelés de
+    // l'extérieur lorsque l'on fait un "new droit()"
+     // On va utiliser le constructeur pour hydrater notre instance d'objet droit
+     public function __construct(array $donnees)
+     {
+         // Appel de la fonction d'hydratation pour gérer le tableau
+         // passé en paramètre
+         $this->hydrate($donnees);
+     }  
         

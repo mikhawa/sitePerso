@@ -27,9 +27,12 @@ class droit
      */
 
     // Les constructeurs sont toujours public et appelés de l'extérieur lorsque l'on fait un "new droit()"
-    public function __construct()
+    // On va utiliser le constructeur pour hydrater notre instance d'objet droit
+    public function __construct(array $donnees)
     {
-
+        // Appel de la fonction d'hydratation pour gérer le tableau
+        // passé en paramètre
+        $this->hydrate($donnees);
     }
 
     // Méthode privée d'hydratation

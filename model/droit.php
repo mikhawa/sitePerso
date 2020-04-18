@@ -65,7 +65,8 @@ class droit
     {
         // on va éviter les attaques en préparant l'insertion probable dans une base de donnée
         $this->droitname = htmlspecialchars(strip_tags(trim($droitname)),ENT_QUOTES);
-        // si le nom du droit converti à plus de 60 caractères (voir ce champs dans la table), on refuse de changer la valeur
+        // si le nom du droit converti à plus de 60 caractères (voir ce champs dans la table),
+        // on refuse de changer la valeur, erreur SQL car ce champs ne peut être NULL
         $this->droitname = (strlen($this->droitname)>60)? NULL : $this->droitname;
     }
 
@@ -79,7 +80,11 @@ class droit
     // void exprime qu'il n'y a pas de retour (procédure)
     public function setDroitdesc(string $droitdesc): void
     {
-        $this->droitdesc = $droitdesc;
+        // ce champs peut être null, on va juste protégér contre les tags, espaces et entités html
+        // si il dépasse les 300 caractères, on aura donc une erreur SQL en innodb, je ne le traîte pas
+        // comme setDroitname(), c'est un choix dans le gestion des erreurs
+        $this->droitdesc = htmlspecialchars(strip_tags(trim($droitdesc)),ENT_QUOTES);
+
     }
 
 }

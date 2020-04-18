@@ -349,7 +349,7 @@ Pour qu'il colle avec les besoins de notre table, j'utilise une condition ternai
             $this->iddroit = (empty($iddroit)||$iddroit<0)? NULL : $iddroit;
         }         
 ##### Modification de setDroitname()
-On accepte les chaînes de caractères de moins de 60 caractères encodées en entités html sans espaces avant/après et sans tags
+On accepte les chaînes de caractères de moins de 60 caractères encodées en entités html sans espaces avant/après et sans tags. Si le texte est trop long, on met la valeur à NULL, ce qu'interdit SQL dans notre champs (NN -> Not Null)
 
     public function setDroitname(string $droitname): void
         {
@@ -362,3 +362,16 @@ On accepte les chaînes de caractères de moins de 60 caractères encodées en e
             $this->droitname = (strlen($this->droitname)>60)? NULL : $this->droitname;
         }
 ! on pourrait désencoder les entités html dans le getDroitname(), mais c'est généralement pas nécessaire.          
+##### Modification de setDroitdesc()
+identique que le précendent sauf que le champs peut être NULL, si ça dépasse les 300 caractères je laisserai SQL m'envoyer l'erreur TOO LONG
+
+    public function setDroitdesc(string $droitdesc): void
+        {
+            // ce champs peut être null, on va juste protégér contre les tags, espaces et entités html
+            // si il dépasse les 300 caractères, on aura donc une erreur SQL en innodb, je ne le traîte pas
+            // comme setDroitname(), c'est un choix dans le gestion des erreurs
+            $this->droitdesc = htmlspecialchars(strip_tags(trim($droitdesc)),ENT_QUOTES);
+    
+        }
+        
+        

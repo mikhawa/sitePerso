@@ -284,6 +284,52 @@ Création du constructeur qui sera appelée lors de son instanciation ($a = new 
     
         }
 
+Création des getters et setters, ce sont les méthodes permettant de manipuler, modifier et supprimer nos attributs. Elles sont publique on peut les utiliser hors de la classe. Cette première version n'est pas encore "parfaitement"' optimisée pour notre table. Vous remarquerez qu'ils portent le même nom que les attributs avec get ou set devant le nom mis en majuscule.
 
+Exemple : $iddroit donne getIddroit() et setIddroit() 
 
-            
+      model/droit.php
+      ...
+      /* Les méthodes de type getters (récupère une valeur) et les setters (change une valeur)
+          permettent de changer/récupérer les attributs avec un contôle sur les données
+          on peut les mettre en publique car nos attributs sont privés
+          */
+      
+          // on récupère l'id, si il est un integer
+          public function getIddroit(): int
+          {
+              return $this->iddroit;
+          }
+      
+          // on introduit un id, si il est un integer,
+          // void exprime qu'il n'y a pas de retour (procédure)
+          public function setIddroit(int $iddroit): void
+          {
+              $this->iddroit = $iddroit;
+          }
+      
+          // on récupère le nom, il doit être un string
+          public function getDroitname(): string
+          {
+              return $this->droitname;
+          }
+      
+          // on introduit un nom, il doit être un string,
+          // void exprime qu'il n'y a pas de retour (procédure)
+          public function setDroitname(string $droitname): void
+          {
+              $this->droitname = $droitname;
+          }
+      
+          // on récupère la description, elle doit être un string
+          public function getDroitdesc(): string
+          {
+              return $this->droitdesc;
+          }
+      
+          // on introduit la description, elle d oit être un string
+          // void exprime qu'il n'y a pas de retour (procédure)
+          public function setDroitdesc(string $droitdesc): void
+          {
+              $this->droitdesc = $droitdesc;
+          }      

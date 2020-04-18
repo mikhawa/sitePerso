@@ -16,4 +16,22 @@ class droit
     private $droitname;
     private $droitdesc;
 
+    /*
+     * Les constantes se trouveront ici,
+     * elles ne sont pas nécessaires
+     * lors d'un mapping d'une table
+     */
+
+    /*
+     * Les méthodes, ce sont les fonctions appartenant à la classe
+     */
+
+    // Les constructeurs sont toujours public et appelés de l'extérieur lorsque l'on fait un "new droit()"
+
+    public function __construct()
+    {
+
+    }
+
+
 }

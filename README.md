@@ -259,4 +259,31 @@ Création des attributs
     
     }
 
+Nous n'avons pas besoin de constantes de classe dans ce fichier.
+
+Création du constructeur qui sera appelée lors de son instanciation ($a = new droit())
+
+
+    model.droit.php
+    ...
+    /*
+         * Les constantes se trouveront ici,
+         * elles ne sont pas nécessaires
+         * lors d'un mapping d'une table
+         */
+    
+        /*
+         * Les méthodes, ce sont les fonctions appartenant à la classe
+         */
+    
+        // Les constructeurs sont toujours public et 
+        // appelés de l'extérieur lorsque l'on fait un "new droit()"
+    
+        public function __construct()
+        {
+    
+        }
+
+
+
             

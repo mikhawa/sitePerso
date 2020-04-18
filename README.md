@@ -236,4 +236,27 @@ Je vais décomposer le premier mapping: droit
     {
     
     }
-Nous créons donc un fichier qui porte le même nom que la classe qu'il contient (voir l'autoload). La déclaration d'une classe se faita avec le mot clef: class. Contrairement aux fonctions, il n'y a pas de () avant les {}                  
+Nous créons donc un fichier qui porte le même nom que la classe qu'il contient (voir l'autoload). La déclaration d'une classe se faita avec le mot clef: class. Contrairement aux fonctions, il n'y a pas de () avant les {}
+
+Création des attributs
+
+    model/droit.php
+    ...
+    class droit
+    {
+        /* attributs, parfois nommés propriétés
+           ce sont nos variables de la classe,
+           dans notre cas ils vont reprénsenter les
+           champs de notre base de donnée. Nous
+           leurs donneront les mêmes noms.
+           Ils seront mis en visibilité private, ils ne
+           peuvent être lu qu'à l'intérieur de cette
+           classe
+        */
+        private $iddroit;
+        private $droitname;
+        private $droitdesc;
+    
+    }
+
+            

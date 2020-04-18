@@ -225,4 +225,15 @@ On va donc corriger la valeur dans config.php et config.php.exemple !
     define("DB_NAME","michadbpitz");
 Nous devrions avoir une page vide: tout va bien !
 
-               
+### Mapping des tables
+Nous allons transformer chaque table de la base de données (sauf les tables créées pour les many to many) en class dans notre dossier model
+
+Je vais décomposer le premier mapping: droit
+
+    model/droit.php
+    ...
+    class droit
+    {
+    
+    }
+Nous créons donc un fichier qui porte le même nom que la classe qu'il contient (voir l'autoload). La déclaration d'une classe se faita avec le mot clef: class. Contrairement aux fonctions, il n'y a pas de () avant les {}                  

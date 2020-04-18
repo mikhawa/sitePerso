@@ -441,4 +441,7 @@ Nous allons le tester dans le Contrôleur frontal, nous le retirerons juste apr�
         'droitdesc'=>[25],
         'test'=>"n'importe quoi"]);
     echo "<pre>".var_dump($d)."</pre>";
-Les entrées sont ainsi protégées au niveau de l'instance de l'objet, avant même qu'une requête ne soit effectuée.            
+Les entrées sont ainsi protégées au niveau de l'instance de l'objet, avant même qu'une requête ne soit effectuée.  
+#### Retrait du code 
+On retire le code dans le contrôleur frontal, notre objet est donc fonctionnel
+     

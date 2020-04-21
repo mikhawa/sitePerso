@@ -1014,4 +1014,10 @@ Nous faisons la base, nous adapterons les setters pour les rendre sécurisés pl
     
     }
     
-        
+## Création d'une session
+Nous allons lancer une session pour gérer les droits, nous mettons ça au début du contrôleur frontal
+
+    public/index.php
+    ...
+    // Lancement d'une session
+    session_start();        

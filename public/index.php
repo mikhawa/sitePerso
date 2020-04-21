@@ -3,6 +3,9 @@
  * Ceci est notre Contrôleur Frontal, toutes les requêtes entrantes comme sortantes passent par ce fichier (sécurité)
  */
 
+// Lancement d'une session
+session_start();
+
 /*
  * Appel de nos dépendances
  */
